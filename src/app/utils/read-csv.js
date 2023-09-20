@@ -1,14 +1,15 @@
 import fs from "node:fs";
 import { parse } from "csv-parse";
 
+const parser = fs.createReadStream("src/assets/example.csv").pipe(
+  parse({
+    delimiter: ",",
+    columns: true,
+  })
+);
+
 async function readCsv() {
   const results = [];
-  const parser = fs.createReadStream("src/assets/example.csv").pipe(
-    parse({
-      delimiter: ",",
-      columns: true,
-    })
-  );
 
   for await (const record of parser) {
     results.push(record);
