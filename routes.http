@@ -1,0 +1,28 @@
+POST http://localhost:3334/tasks
+Content-Type: application/json
+
+{
+  "title": "Again",
+  "description": "Do some with this"
+}
+
+###
+GET http://localhost:3334/tasks?search=Guilherme
+
+###
+DELETE http://localhost:3334/tasks/01829277-4447-4731-818d-ed992fda652a
+
+###
+PUT http://localhost:3334/tasks/fasdfasdf
+Content-Type: application/json
+
+{
+  "title": "Edit this shit",
+  "description": "With new info"
+}
+
+###
+PATCH http://localhost:3334/tasks/fb99e457-bd81-4a07-9d79-39ade15844f2/completed
+
+###
+POST http://localhost:3334/upload
